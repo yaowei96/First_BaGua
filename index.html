@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视图，宽度等于默认的宽度 -->
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的第一个页面</title>
+    <style>
+        body {
+            background: #eee;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 八卦图360度旋转 */
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        #八卦 {
+
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            /* 让八卦一直旋转(线性)10秒钟转一圈*/
+            animation: x 10s infinite linear;
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+        }
+
+        /* 媒体查询 */
+        @media (max: width 500px) {
+            #八卦 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        #八卦>div:first-child {
+            border: 1px solid red;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background: black;
+        }
+
+
+
+
+        #八卦>div:nth-child(2) {
+
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background: white;
+        }
+
+        #八卦>div:nth-child(3) {
+
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 50%;
+            background: black;
+
+        }
+
+        #八卦>div:nth-child(4) {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            bottom: 0;
+            margin-left: -100px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        #八卦>div:nth-child(5) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: 75px;
+            margin-left: -25px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        #八卦>div:nth-child(6) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            bottom: 75px;
+            margin-left: -25px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        #八卦-wrapper {
+            border: 10px solid red;
+            /* 用户可看的范围 */
+            height: 100vh;
+            /* 用户可看页面，长宽高 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 页面字体居中 */
+            flex-direction: column;
+        }
+
+        #八卦-描述 {
+            /* 一个字的宽度与高度 */
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<!-- 八卦的居中 -->
+
+<body>
+    <div id="八卦-wrapper">
+        <div id="八卦">
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="八卦-描述">
+            道可道，非常道
+        </div>
+    </div>
+</body>
+
+</html>
